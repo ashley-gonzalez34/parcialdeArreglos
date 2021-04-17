@@ -12,24 +12,24 @@ namespace ParcialArreglo.CLASE
 
 
 
-        public string[,] Dimensiones(string[] datoss, int numerodelosdatos)
+        public string[,] Dimensiones(string[] arreglo1, int numerodelosdatos)
         {
-            string[,] arreglodosdimensiones = new string[datoss.Length - 1, numerodelosdatos];
+            string[,] arreglodosdimensiones = new string[arreglo1.Length - 1, numerodelosdatos];
             int contador = 0;
-            foreach (string fila in datoss)
+            foreach (string fila in arreglo1)
             {
                 if (contador > 0)
                 {
                     string[] datos = fila.Split(',');
 
-                    arreglodosdimensiones[contador - 1, 0] = datoss[0]; //Correlativo
-                    arreglodosdimensiones[contador - 1, 1] = datoss[1]; //Nombre de los alumnos
-                    arreglodosdimensiones[contador - 1, 2] = datoss[2]; //Parcial1
-                    arreglodosdimensiones[contador - 1, 3] = datoss[3]; //Parcial2
-                    arreglodosdimensiones[contador - 1, 4] = datoss[4]; //ExamenFinal
-                    arreglodosdimensiones[contador - 1, 5] = datoss[5]; //Seccion
+                    arreglodosdimensiones[contador - 1, 0] = datos[0]; //Correlativo
+                    arreglodosdimensiones[contador - 1, 1] = datos[1]; //Nombre de los alumnos
+                    arreglodosdimensiones[contador - 1, 2] = datos[2]; //Parcial1
+                    arreglodosdimensiones[contador - 1, 3] = datos[3]; //Parcial2
+                    arreglodosdimensiones[contador - 1, 4] = datos[4]; //ExamenFinal
+                    arreglodosdimensiones[contador - 1, 5] = datos[5]; //Seccion
 
-                    int suma = Convert.ToInt32(datoss[2]) + Convert.ToInt32(datoss[3]) + Convert.ToInt32(datoss[4]);
+                    int suma = Convert.ToInt32(datos[2]) + Convert.ToInt32(datoss[3]) + Convert.ToInt32(datoss[4]);
                    int promedios = suma / 3;
 
                     arreglodosdimensiones[contador - 1, 6] = Convert.ToString(promedios);
